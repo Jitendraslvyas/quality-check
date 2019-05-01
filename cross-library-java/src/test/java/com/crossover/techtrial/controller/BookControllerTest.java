@@ -4,12 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -18,7 +16,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.crossover.techtrial.model.Book;
 import com.crossover.techtrial.util.TestUtil;
@@ -33,16 +30,8 @@ import com.crossover.techtrial.util.TestUtil;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BookControllerTest {
 
-    @Mock
-    private BookController bookController;
-
     @Autowired
     private TestRestTemplate template;
-
-    @Before
-    public void setUp() throws Exception {
-        MockMvcBuilders.standaloneSetup(bookController).build();
-    }
 
     /**
      * Test case for Book related APIs.

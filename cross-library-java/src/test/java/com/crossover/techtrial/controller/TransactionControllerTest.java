@@ -6,7 +6,6 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -44,9 +43,6 @@ public class TransactionControllerTest {
     private static Long bookId;
     private static Long transactionId;
 
-    @Mock
-    private TransactionController transactionController;
-
     @Autowired
     private TestRestTemplate template;
     @Autowired
@@ -60,8 +56,6 @@ public class TransactionControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        MockMvcBuilders.standaloneSetup(transactionController).build();
-
         DefaultMockMvcBuilder builder = MockMvcBuilders.webAppContextSetup(this.wac);
         this.mockMvc = builder.build();
 

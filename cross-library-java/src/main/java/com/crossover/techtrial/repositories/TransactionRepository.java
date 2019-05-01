@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.crossover.techtrial.model.Transaction;
 
@@ -15,7 +15,7 @@ import com.crossover.techtrial.model.Transaction;
  * 
  * @author crossover
  */
-@RestResource(exported = false)
+@RepositoryRestResource(exported = false)
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
 
     Long countByMemberIdAndDateOfReturnIsNull(Long memberId);
